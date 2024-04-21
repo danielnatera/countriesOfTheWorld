@@ -57,6 +57,7 @@ export default {
 .country-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .country-card {

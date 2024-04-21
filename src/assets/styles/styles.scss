@@ -6,7 +6,7 @@ $secondary-light: #bed7dc;
 $dark-color: #31363f;
 $dark-color-2: #454b55;
 $light-color: #f8f8ff;
-$lightMode-color: #fb6d48;
+$lightMode-color: #ffbb70;
 $darkMode-color: #3a1078;
 
 #app {
@@ -23,7 +23,7 @@ input {
   border-radius: 12px;
   border: 1px solid $secondary-color;
   background: $light-color;
-  max-height: 28px !important;
+  height: 40px !important;
   margin-right: 0.5rem !important;
   width: 180px;
 }
@@ -35,6 +35,10 @@ input {
 .dropdown-menu li button {
   background-color: transparent !important;
   border: none !important;
+}
+
+.main-title {
+  color: $light-color;
 }
 
 button {
@@ -88,8 +92,8 @@ svg {
 .search-button {
   background-color: $secondary-light;
   border-radius: 12px;
-  width: fit-content;
-  height: fit-content;
+  width: 40px;
+  height: 40px;
   padding: 0 !important;
   p {
     display: none;
@@ -152,6 +156,7 @@ svg {
   background-color: $dark-color-2;
   height: fit-content;
   width: 100vw !important;
+  margin: auto;
 }
 
 .options-container {
@@ -203,6 +208,20 @@ svg {
     img {
       width: 160px;
     }
+  }
+}
+.close-button {
+  font-weight: 600;
+  color: $light-color;
+}
+
+.country-list.list-view {
+  .main-card {
+    flex-direction: row;
+  }
+  h4 {
+    text-align: end;
+    margin-right: 0.8rem;
   }
 }
 
@@ -271,7 +290,7 @@ svg {
     }
     img {
       width: 100%;
-      max-width: 160px;
+      max-width: 200px;
       max-height: auto;
     }
   }
@@ -286,8 +305,9 @@ svg {
       width: 300px;
       margin-right: 1.5rem;
     }
-    .main-card {
-      flex-direction: row;
+
+    h4 {
+      margin-right: 2rem;
     }
   }
 

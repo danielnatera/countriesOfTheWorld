@@ -1,17 +1,17 @@
 <template>
     <div class="country-card" :class="{ 'dark-theme': darkMode }" @click="handleClick">
+        <h4 class="mb-0">{{ country.name.common }}</h4>
         <div class="main-card">
             <div class="flag-container">
                 <img :src="country.flags.svg" :alt="`Flag of ${country.name.common}`" />
                 <h3>{{ country.name.common }}</h3>
             </div>
             <div class="countryData-container">
-                <p>Capital: {{ country.capital ? country.capital[0] : "No capital" }}</p>
-                <p>Population: {{ country.population.toLocaleString() }}</p>
-                <p>Languages: {{ languagesList }}</p>
+                <p><strong>Capital:</strong> {{ country.capital ? country.capital[0] : "No capital" }}</p>
+                <p><strong>Population:</strong> {{ country.population.toLocaleString() }}</p>
+                <p><strong>Languages:</strong> {{ languagesList }}</p>
             </div>
         </div>
-        <h4>{{ country.name.common }}</h4>
     </div>
 </template>
 
@@ -79,6 +79,14 @@ export default {
         display: none;
     }
 
+}
+
+.flag-container {
+    min-height: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 10rem;
 }
 
 .list-view .country-card {

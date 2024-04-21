@@ -8,12 +8,12 @@
         </div>
         <button @click="performSearch" class="search-button">
           <p>Buscar</p>
-          <Ico_search />
+          <Ico_search height="32" width="32" />
         </button>
       </div>
       <RegionSelect :initialRegion="selectedRegion" @filterByRegion="filterByRegion" />
     </div>
-    <h3 class="w-50">Countries of the world</h3>
+    <h3 class="w-50 main-title mb-0">Countries of the world</h3>
     <div class="options-container d-flex align-items-center w-75">
       <button class="d-flex button-reset" @click="resetFilters">
         <p>Reset</p>
@@ -24,18 +24,22 @@
         <Ico_grid v-if="viewMode === 'list'" />
         <Ico_list v-else />
       </button>
-      <button @click="toggleDarkMode" :class="darkMode ? 'btn-light' : 'btn-dark'">
-        <component :is="darkMode ? Ico_darkMode : Ico_lightMode" />
-        <Ico_darkMode v-if="!darkMode" />
-        <Ico_lightMode v-if="darkMode" />
-      </button>
+      <div class="toggle-switch">
+        <button @click="toggleDarkMode" class="toggle-btn d-flex align-items-center" :class="{ 'dark-mode': darkMode }">
+          <component :is="darkMode ? Ico_darkMode : Ico_lightMode" />
+          <span class="switch d-flex align-items-center justify-content-center">
+            <Ico_darkMode height="40" width="40" v-if="darkMode" />
+            <Ico_lightMode height="40" width="40" v-if="!darkMode" />
+          </span>
+        </button>
+      </div>
     </div>
   </header>
 </template>
 
 <script>
 import { useDarkMode } from '@/composables/useDarkMode';
-import RegionSelect from './regionSelect';
+import RegionSelect from './RegionSelect';
 import Ico_search from '../assets/svg/ico-search.vue'
 import Ico_reload from '../assets/svg/ico-reload.vue'
 import Ico_darkMode from '../assets/svg/ico-darkMode.vue';
@@ -128,5 +132,38 @@ button {
 
 .list-button p {
   display: none;
+}
+
+.toggle-switch button {
+  background-color: $lightMode-color;
+  /* Fondo gris por defecto */
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  position: relative;
+  width: 56px;
+  border-radius: 16px !important;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.toggle-switch button.dark-mode {
+  background-color: $darkMode-color;
+}
+
+.switch {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s;
+}
+
+button.dark-mode .switch {
+  transform: translateX(23px);
 }
 </style>

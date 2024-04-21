@@ -1,8 +1,7 @@
 <template>
-    <svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 14 14">
-        <path fill="currentColor" fill-rule="evenodd"
-            d="M0 7a7 7 0 1 1 14 0A7 7 0 0 1 0 7m7-.019a2.46 2.46 0 0 1 2.46-2.459c.25 0 .441-.3.258-.47a3.996 3.996 0 1 0 0 5.86c.183-.17-.008-.471-.258-.471A2.46 2.46 0 0 1 7 6.98Z"
-            clip-rule="evenodd" />
+    <svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" viewBox="0 0 24 24">
+        <path fill="currentColor"
+            d="M12 21q-3.775 0-6.387-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.325-.05.575.088t.4.362q.15.225.163.525t-.188.575q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.275-.175.563-.162t.512.137q.25.125.388.375t.087.6q-.35 3.45-2.937 5.725T12 21" />
     </svg>
 </template>
 
@@ -19,7 +18,7 @@ export default {
         },
         color: {
             type: String,
-            default: "#76ABAE",
+            default: "#454b55",
         },
     },
 };

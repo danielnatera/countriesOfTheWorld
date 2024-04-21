@@ -1,11 +1,12 @@
-import axios from "axios";
-
 const BASE_URL = "https://restcountries.com/v3.1";
 
 const fetchAllCountries = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/all`);
-    return response.data;
+    const response = await fetch(`${BASE_URL}/all`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return await response.json();
   } catch (error) {
     console.error("Error fetching countries:", error);
     throw error;
