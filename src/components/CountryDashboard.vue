@@ -33,10 +33,10 @@ export default {
   },
   methods: {
     handleSearch(searchTerm) {
-      this.filterText = searchTerm;
+      this.filterText = searchTerm; // Handling input country name that will be filtered in CountryList
     },
     handleFilterRegion(region) {
-      this.selectedRegion = region;
+      this.selectedRegion = region; // Handling region name that will be filtered in CountryList
     },
     handleViewModeChange(mode) {
       this.viewMode = mode;  // Changing the view mode 

@@ -270,16 +270,17 @@ svg {
   }
 
   .country-list.list-view {
+    max-width: 760px;
     height: 170px;
     p {
       font-size: 18px;
     }
-  }
-  .country-list.list-view {
-    max-width: 760px;
     .countryData-container {
       width: 300px;
       margin-right: 1.5rem;
+    }
+    .main-card {
+      flex-direction: row;
     }
   }
 

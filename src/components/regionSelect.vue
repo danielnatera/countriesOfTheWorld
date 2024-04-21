@@ -44,7 +44,7 @@ export default {
             dropdownText: 'Seleccione una región'
         };
     },
-    watch: {
+    watch: { //Updating dynamically the data with the watch so when resetting the icon changes
         initialRegion(newRegion) {
             this.updateRegion(newRegion);
         }
