@@ -1,26 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <CountryDashboard />
+    <!-- Contenido restante de tu app -->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CountryDashboard from '@/components/CountryDashboard.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    CountryDashboard
+  },
+};
 </script>
 
-<style>
+
+<style lang="scss">
+@import "@/assets/styles/styles.scss";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $primary-color;
   margin-top: 60px;
 }
 </style>
