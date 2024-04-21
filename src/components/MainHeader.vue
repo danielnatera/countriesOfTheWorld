@@ -73,7 +73,7 @@ export default {
       this.selectedRegion = newRegion;
       this.$emit('filter-region', this.selectedRegion);
     },
-    resetFilters() {
+    resetFilters() { // Resetting search term and region and emmiting reset to dashboard
       this.searchTerm = '';
       this.selectedRegion = '';
       this.$emit('reset');

@@ -6,10 +6,10 @@
                     <img :src="country.flags.svg" :alt="`Flag of ${country.name.common}`" class="image mt-4" />
                     <p class="image-label">Flag</p>
                 </div>
-                <div class="image-box d-flex flex-column justify-content-between align-items-center">
+                <div class="image-box d-flex flex-column justify-content-end align-items-center">
                     <img :src="country.coatOfArms.svg" :alt="`Coat of Arms of ${country.name.common}`"
-                        class="coat-of-arms" />
-                    <p class="image-label">Coat of arms</p>
+                        onError="defaultImg" class="coat-of-arms" />
+                    <p class="image-label mt-3">Coat of arms</p>
                 </div>
             </div>
             <table class="info-table mt-2">
@@ -56,6 +56,8 @@ import Ico_americas from '../assets/svg/ico-americas.vue';
 import Ico_asia from '../assets/svg/ico-asia.vue';
 import Ico_europe from '../assets/svg/ico-europe.vue';
 import Ico_oceania from '../assets/svg/ico-oceania.vue';
+import defaultImage from '@/assets/notFound.jpg';
+
 
 export default {
     props: {
@@ -70,6 +72,13 @@ export default {
         Ico_europe,
         Ico_oceania,
     },
+    data() {
+        return {
+            imgLoaded: false,
+            defaultImage: defaultImage,
+        };
+    },
+    // Com
     computed: {
         currentIconComponent() {
             const region = this.country.region.toLowerCase();
@@ -93,6 +102,10 @@ export default {
         closeModal() {
             this.$emit("close");
         },
+        handleImageError(event) {
+            console.log('Error al cargar la imagen');
+            event.target.src = this.defaultImage;
+        }
     },
 };
 </script>
@@ -133,10 +146,8 @@ export default {
 
 .image-box {
     text-align: center;
-    /* Adds a subtle border */
     padding: 10px;
     width: 150px;
-    /* Adjust based on your needs */
 }
 
 .coat-of-arms {
@@ -145,9 +156,7 @@ export default {
 
 .image {
     width: 100%;
-    /* Makes the image responsive */
     height: auto;
-    /* Maintain aspect ratio */
     margin-bottom: 10px;
 }
 

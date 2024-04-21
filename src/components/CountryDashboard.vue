@@ -41,10 +41,9 @@ export default {
     handleViewModeChange(mode) {
       this.viewMode = mode;  // Changing the view mode 
     },
-    resetAll() {
+    resetAll() { //Resetting search parameters and filters
       this.filterText = "";
       this.selectedRegion = "";
-      this.filteredCountries = [...this.countries];
     }
   },
   async created() {

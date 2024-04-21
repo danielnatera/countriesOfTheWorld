@@ -1,7 +1,6 @@
 <template>
   <div>
     <CountryDashboard />
-    <!-- Contenido restante de tu app -->
   </div>
 </template>
 

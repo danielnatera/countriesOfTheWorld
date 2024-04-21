@@ -12,6 +12,7 @@ $darkMode-color: #3a1078;
 #app {
   font-family: "Urbanist", sans-serif !important;
   margin: 0px !important;
+  min-height: 100vh;
 }
 
 p {
@@ -29,6 +30,11 @@ input {
 
 .dropdown-toggle::after {
   display: none !important;
+}
+
+.dropdown-menu li button {
+  background-color: transparent !important;
+  border: none !important;
 }
 
 button {
@@ -117,6 +123,7 @@ svg {
 
 .dashboard-container.dark-theme {
   background-color: $dark-color-2;
+  min-height: 100vh;
 }
 
 .dashboard-container.dark-theme .header input {

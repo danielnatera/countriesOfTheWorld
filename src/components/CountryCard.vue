@@ -26,6 +26,11 @@ export default {
         const { darkMode } = useDarkMode();
         return { darkMode };
     },
+    data() {
+        return {
+            imgLoaded: false,  // Image load status
+        };
+    },
     // Computed so it recalculates only when a element changes
     computed: {
         languagesList() {
